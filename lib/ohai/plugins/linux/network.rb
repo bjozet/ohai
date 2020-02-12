@@ -285,7 +285,7 @@ Ohai.plugin(:Network) do
 
       # https://rubular.com/r/JRp6lNANmpcLV5
       if line =~ /\sstate (\w+)/
-        iface[tmp_int]["state"] = $1.downcase
+        iface[tmp_int]["state"] = $1.downcase if iface[tmp_int]["state"].nil?
       end
     end
     iface
